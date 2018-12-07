@@ -5,7 +5,7 @@ int main(void) {
   struct Stack * head = NULL;
   char chara;
   while(scanf("%c", &chara)&&chara!='\n'){
-    printf("%clol\n",chara);
+    //printf("%clol\n",chara);
     charHandler(chara, &head);
   
   }
