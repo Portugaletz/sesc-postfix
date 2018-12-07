@@ -2,6 +2,7 @@
 #include "errorHandler.h"
 
 void charHandler(char c, struct Stack ** head){
+  int tmp;
   if (c>='0' && c<='9'){
     push(head, c-'0');
     return;
@@ -23,7 +24,8 @@ void charHandler(char c, struct Stack ** head){
       break;
     case '-':
       if (stackLen(head)==2){
-        push(head, pop(head)-pop(head));
+        tmp = pop(head);
+        push(head, pop(head)-tmp);
       }else{
         error(3);
       }
@@ -37,7 +39,8 @@ void charHandler(char c, struct Stack ** head){
       break;
     case '/':
       if (stackLen(head)==2){
-        push(head, pop(head)/pop(head));
+        tmp = pop(head);
+        push(head, pop(head)/tmp);
       }else{
         error(5);
       }
